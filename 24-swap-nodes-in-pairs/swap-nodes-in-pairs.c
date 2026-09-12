@@ -10,22 +10,23 @@ struct ListNode* swapPairs(struct ListNode* head) {
         return head;
     struct ListNode *first = head, *sec = head->next, *prve = 0, *third;
 
-    while (sec && first) {
-        third = sec->next;
-        sec->next = first;
-        first->next = third;
+   while(first && sec)
+   {
+    third=sec->next;
+    sec->next=first;
+    first->next=third;
+    
+    if(prve)
+    prve->next=sec;
+    else
+    head=sec;
 
-        if (prve)
-            prve->next = sec;
-        else
-            head = sec;
-
-        prve = first;
-        first = third;
-        if (third)
-            sec = third->next;
-        else
-            sec = 0;
-    }
+    prve=first;
+    first=third;
+    if(third)
+    sec=third->next;
+    else
+    sec=0;
+   }
     return head;
 }
