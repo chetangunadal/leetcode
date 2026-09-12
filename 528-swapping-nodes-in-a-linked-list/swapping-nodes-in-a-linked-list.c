@@ -9,7 +9,7 @@ struct ListNode* swapNodes(struct ListNode* head, int k) {
     if(head==0 || head->next==0)
     return head;
 struct ListNode* p=head,*q;
-long i,c=0,j;
+int i,c=0,j;
 while (p)
 {
     c++;
