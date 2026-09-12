@@ -1,6 +1,6 @@
 int longestPalindrome(char* s) {
     int a[52]={0};
-    int maxoddi=0,i,max=0,sum=0;
+    int i,f=1,sum=0,oddi;
     for(i=0;s[i];i++)
     {
         if(s[i]>='a' && s[i]<='z')
@@ -10,21 +10,16 @@ int longestPalindrome(char* s) {
     }
 for(i=0;i<52;i++)
 {
-    if(a[i]%2 && max<=a[i])
+    if(a[i]%2 && f)
     {
-    max=a[i];
-    maxoddi=i;
+        f=0;
+        oddi=i;
     }
-}
-for(i=0;i<52;i++)
-{
-    if(a[i]%2==1 && i!=maxoddi)
+    if(a[i]%2 && oddi!=i)
     a[i]--;
-}
-for(i=0;i<52;i++)
-{
     sum+=a[i];
 }
+    
 return sum;
 }
     
