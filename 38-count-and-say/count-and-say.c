@@ -1,7 +1,7 @@
 char* countAndSay(int n) {
 
     
-    char *s=malloc(10000), s1[10000];
+    char *s=malloc(5000), s1[5000];
     strcpy(s,"1");
     if (n == 1)
         return s;
