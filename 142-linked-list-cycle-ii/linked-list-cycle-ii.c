@@ -7,7 +7,6 @@
  */
 struct ListNode *detectCycle(struct ListNode *head) {
     struct  ListNode *p=head,*q=head;
-    int pos=0;
 
     while(p && p->next)
     {
