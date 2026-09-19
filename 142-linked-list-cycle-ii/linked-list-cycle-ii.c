@@ -20,6 +20,7 @@ struct ListNode* detectCycle(struct ListNode* head) {
                 q = q->next;
             }
             return p;
+            
         }
     }
     return 0;
