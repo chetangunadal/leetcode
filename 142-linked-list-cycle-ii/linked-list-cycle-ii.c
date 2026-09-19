@@ -5,25 +5,22 @@
  *     struct ListNode *next;
  * };
  */
-struct ListNode *detectCycle(struct ListNode *head) {
-    struct  ListNode *p=head,*q=head;
+struct ListNode* detectCycle(struct ListNode* head) {
+    struct ListNode *p = head, *q = head;
 
-    while(p && p->next)
-    {
-        p=p->next->next;
-        q=q->next;
+    while (p && p->next) {
+        p = p->next->next;
+        q = q->next;
 
-        if(p==q){
+        if (p == q) {
 
-    p=head;
-    while(p!=q)
-    {
-        p=p->next;
-        q=q->next;
-    }
-        return p;
+            p = head;
+            while (p != q) {
+                p = p->next;
+                q = q->next;
+            }
+            return p;
         }
     }
     return 0;
-    
 }
