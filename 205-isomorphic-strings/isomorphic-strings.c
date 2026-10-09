@@ -4,8 +4,6 @@ bool isIsomorphic(char* s, char* t) {
     for(i=0;s[i];i++){
         if(a[s[i]]!=b[t[i]])
         return false;
-       
-        
         a[s[i]]=i+1;
         b[t[i]]=i+1;
 
