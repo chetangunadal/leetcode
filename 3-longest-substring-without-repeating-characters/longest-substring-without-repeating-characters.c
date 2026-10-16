@@ -2,7 +2,7 @@ int lengthOfLongestSubstring(char* s) {
   //  if(s==NULL)
   //  return 0;
     int i,max=0,c=0,j;
-    for(i=0;s[i];i++){
+    for(i=j;s[i];i++){
         int a[128]={0};
         c=0;
         for(j=i;s[j];j++)
