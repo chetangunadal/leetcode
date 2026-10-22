@@ -1,7 +1,7 @@
 char* toHex(int num) {
     if(num==0)
     return "0";
-    char *p=calloc(1,10);
+    char *p=calloc(1,9);
     int i=0;
     unsigned int n=num;
     char hex[]="0123456789abcdef";
