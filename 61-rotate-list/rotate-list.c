@@ -10,14 +10,16 @@ struct ListNode* rotateRight(struct ListNode* head, int k) {
     return head;
     struct ListNode*p=head;
     int c=0;
-    while(p)
+    while(p->next)
     c++,p=p->next;
 
+    c++;
     k=k%c;
+    /*
 p=head;
     while(p->next)
     p=p->next;
-
+*/
     p->next=head;
     p=head;
 k=c-k-1;
