@@ -1,18 +1,22 @@
 char* intToRoman(int num) {
-    
-    char *s[]={"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
-    int  n[]={1000,900,500,400,100,90,50,40,10,9,5,4,1};
-char p[20]="\0";
-int i=0,j=0;
-    while(num){
-        while(num>=n[i]){
-            strcat(p,s[i]);
-            num-=n[i];
-        }
-      i++;
-    }
+    int i = 0;
+    char* p;
+    static char ans[100];
+    int c = 0;
+    char* ro[] = {"M",  "CM", "D",  "CD", "C",  "XC", "L",
+                  "XL", "X",  "IX", "V",  "IV", "I"};
+    int n[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
 
-    char *m=malloc(strlen(p)+1);
-    strcpy(m,p);
-    return m;
+    while (num) {
+        while (num >= n[i]) {
+            p = ro[i];
+            while (*p) {
+                ans[c++] = *p++;
+            }
+            num -= n[i];
+        }
+        i++;
+    }
+    ans[c] = '\0';
+    return ans;
 }
