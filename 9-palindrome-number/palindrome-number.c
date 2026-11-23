@@ -7,8 +7,5 @@ long num=x,rev=0;
         x/=10;
     }
 
-    if(num==rev)
-    return true;
-    else
-    return false;
+    return num==rev;
 }
