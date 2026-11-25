@@ -1,6 +1,6 @@
 char* reverseWords(char* s) {
 
-    char p[1000][100];
+    char p[800][100];
     int i = 0, k = 0, m;
     while (s[i]) {
         while (s[i] == ' ' && s[i])
