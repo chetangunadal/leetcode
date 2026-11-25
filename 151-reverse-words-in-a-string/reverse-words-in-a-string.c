@@ -1,44 +1,24 @@
 char* reverseWords(char* s) {
-    char *q = s + strlen(s) - 1, *p = s;
-    char t;
-    while (p < q) {
-        t = *p, *p = *q, *q = t;
-        q--, p++;
-    }
-    int len = strlen(s) - 1;
-    while (s[len] == ' ') {
-        s[len] = s[len + 1];
-        len--;
-    }
 
-    int i = 0, st, en;
-    while (s[0] == ' ')
-        s++;
-
+    char p[1000][100];
+    int i = 0, k = 0, m;
     while (s[i]) {
-        if (s[i] == ' ' && s[i + 1] == ' ') {
-            for (st = i; s[st]; st++) {
-                s[st] = s[st + 1];
-            }
-            i--;
+        while (s[i] == ' ' && s[i])
+            i++;
+        m = 0;
+        if(s[i]=='\0')
+        break;
+        while (s[i] != ' ' && s[i]) {
+            p[k][m++] = s[i++];
         }
-        i++;
+        p[k++][m] = '\0';
     }
 
-    i = 0;
-    while (s[i]) {
-        if (s[i] == ' ')
-            i++;
-        st = i;
-        while (s[i] != ' ' && s[i])
-            i++;
-        en = i - 1;
-        while (st < en) {
-            t = s[st];
-            s[st] = s[en];
-            s[en] = t;
-            st++, en--;
-        }
+    strcpy(s, p[--k]);
+    while (k) {
+        strcat(s, " ");
+        strcat(s, p[--k]);
     }
+
     return s;
 }
